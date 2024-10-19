@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>¡Gracias por tu pedido!</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-image: url("/static/img/cuppies.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        .thanks-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #27ae60;
+        }
+        h3 {
+            color: #2c3e50;
+        }
+        p {
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        .btn-home {
+            margin-top: 30px;
+        }
+        .error-message {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thanks-container">
+        <!-- Mostrar el mensaje de éxito -->
+        <h1>¡Gracias por tu pedido!</h1>
+        
+        <!-- Mostrar el número de pedido si está disponible -->
+        {% if data and data.n_order %}
+            <h3 class="text-center"># Pedido {{ data.n_order }}</h3>
+        {% endif %}
+        
+        <p>Tu pedido ha sido recibido correctamente. En breve nos pondremos en contacto contigo.</p>
+        
+        <a href="/" class="btn btn-primary btn-home">Volver a la página principal</a>
+    </div>
+    
+
+</body>
+</html>
+
+      <!-- Mostrar la cantidad total de pedidos de forma clara --{% if data and data.total_pedidos %}
+    <p>Este es el pedido número {{ data.n_order }}. Hasta ahora, hemos recibido un total de {{ data.total_pedidos }} pedidos.</p>
+{% endif %}

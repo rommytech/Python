@@ -1,0 +1,55 @@
+/* Estilo general del body */
+html, body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    font-family: 'Arial', sans-serif;
+}
+
+img {
+    max-width: 450px; /* Hacemos la imagen más grande */
+    height: auto;
+}
+
+form {
+    max-width: 700px; /* Ajustamos el tamaño del formulario */
+}
+
+h1 {
+    color: #3498db;
+    font-size: 3em;
+    text-align: center;
+}
+
+p {
+    color: #2c3e50;
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Aumentamos el contenedor principal */
+    margin: 0 auto;
+}
+
+.card {
+    width: 100%; /* Hacemos que la tarjeta ocupe todo el espacio disponible */
+    max-width: 800px; /* Permitimos que crezca más */
+}
+
+img {
+    max-width: 400px; /* Ajustamos el tamaño de la imagen */
+}
+
+h1 {
+    font-size: 3em; /* Tamaño del texto */
+    color: #3498db; /* Color azul si deseas personalizarlo */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
