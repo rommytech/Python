@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Laboratorios</title>
+    <style>
+        table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #007bff;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Información de Laboratorios</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>País</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for laboratorio in laboratorios %}
+            <tr>
+                <td>{{ laboratorio.nombre }}</td>
+                <td>{{ laboratorio.ciudad }}</td>
+                <td>{{ laboratorio.pais }}</td>
+                <td><a href="{% url 'editar_laboratorio' laboratorio.pk %}" class="btn btn-primary">Editar</a></td>
+                <td><a href="{% url 'eliminar_laboratorio' laboratorio.pk %}" class="btn btn-danger">Eliminar</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No hay laboratorios disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="container">
+        <a href="{% url 'insertar_laboratorio' %}" class="btn btn-success">Agregar Nuevo Laboratorio</a>
+        <div class="footer">
+            ¿Información de los Laboratorios?<br>
+            &larr; <a href="http://127.0.0.1:8000/admin/">Ir a la página de Inicio</a><br>
+            Usted ha visitado esta página {{ visitas }} veces.
+        </div>
+    </div>
+
+</body>
+</html>
